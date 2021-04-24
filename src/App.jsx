@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
@@ -7,12 +8,14 @@ export function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact>
-          <Home className="container" />
-        </Route>
-        <Route path="/rooms/:roomId">
-          <Room />
-        </Route>
+        <div className={clsx('jumbotron', 'bg-light', 'container')}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/rooms/:roomId">
+            <Room />
+          </Route>
+        </div>
       </Switch>
     </BrowserRouter>
   );
